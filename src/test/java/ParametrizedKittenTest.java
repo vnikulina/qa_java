@@ -20,7 +20,7 @@ public class ParametrizedKittenTest {
         return new Object[][]{
                 {2, 2},
                 {8, 8},
-                {4, 4},
+                {10, 10},
                 {0, 0},
         };
     }
