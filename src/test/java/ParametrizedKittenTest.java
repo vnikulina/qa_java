@@ -1,0 +1,32 @@
+import com.example.Feline;
+import org.junit.runner.RunWith;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import org.junit.runners.Parameterized;
+
+@RunWith(Parameterized.class)
+public class ParametrizedKittenTest {
+    private final int expectedResult;
+    private final int kittensQuantity;
+    Feline feline = new Feline();
+
+    public ParametrizedKittenTest(int kittensQuantity, int expectedResult) {
+        this.expectedResult = expectedResult;
+        this.kittensQuantity = kittensQuantity;
+    }
+
+    @Parameterized.Parameters
+    public static Object[][] getKittensData() {
+        return new Object[][]{
+                {2, 2},
+                {8, 8},
+                {10, 10},
+                {0, 0},
+        };
+    }
+
+    @Test
+    public void kittensQuantityTest() {
+        assertEquals(expectedResult, feline.getKittens(kittensQuantity));
+    }
+}
